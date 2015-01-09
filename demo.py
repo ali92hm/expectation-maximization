@@ -7,7 +7,8 @@ import os
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-from algorithm import 
+from algorithm import EM
+import argparse
 
 
 def line_plot(data_arrays, xlabel, ylabel, labels, title, f):
@@ -47,12 +48,15 @@ def line_plot(data_arrays, xlabel, ylabel, labels, title, f):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Divides data into the categories by ')
+    parser.add_argument('data', type=argparse.FileType("rb"), help='CSV file of data input')
+    args = parser.parse_args()
     # reading the file
-    with open('hw7.csv', 'rb') as csvfile:
+    with args.data as csvfile:
         reader = csv.reader(csvfile)
         input_list = np.array(map(lambda line: np.array(map(lambda i: float(i), line)), reader))
 
     x_list = input_list[:,0]
     e_matrix = input_list[:,1:]
-    mean_matrix = sumilate_E_M(x_list, e_matrix, 100)
-    line_plot(mean_matrix, 'step', 'mean', ['Distribution 1','Distribution 2','Distribution 3'], 'E-M Learning' ,'part-c.png' )
+    mean_matrix = EM.simulate_E_M(x_list, e_matrix, 100)
+    line_plot(mean_matrix, 'step', 'mean', ['Distribution 1','Distribution 2','Distribution 3'], 'E-M Learning' ,'sample_result.png' )
