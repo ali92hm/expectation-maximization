@@ -35,11 +35,7 @@ input_data_value, expectation_of_category_1 , expectation_of_category_2 , ..., e
     └── algorithm                   - Algorithm implementation
         └── EM.py                   - Expectation Maximization algorithm
 
-##Potential Bugs:
-* Not known.
-
+##[Potential Bugs](https://github.com/A92hm/expectation-maximization/issues)
 ##To do
-
-
 ##License
 [MIT license](http://opensource.org/licenses/MIT)
