@@ -5,7 +5,7 @@ This is an implementation of the expectation maximization.
 
 ### Compilation/Install
 ```bash
-git clone https://github.com/Ali92hm/multi-armed-bandit.git
+git clone https://github.com/ali92hm/expectation-maximization
 ```
 
 ### Execution
